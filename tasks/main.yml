@@ -21,6 +21,15 @@
   pip:
     name: "docker"
 
+- name: Ensure system script path exists
+  file:
+    path: "/home/{{ new_ansible_user }}/system"
+    owner: "{{ new_ansible_user }}"
+    group: "{{ new_ansible_group }}"
+    state: directory
+    mode: 0700
+    recurse: true
+
 - name: Ensure ansible packages are installed.
   apt:
     name: "{{ ansible_packages }}"
