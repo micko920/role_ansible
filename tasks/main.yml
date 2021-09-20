@@ -26,3 +26,7 @@
     name: "{{ ansible_packages }}"
     state: present
 
+- name: Install collections from Ansible Galaxy
+  command: "ansible-galaxy collection install {{ item }}"
+  loop: "{{ ansible_galaxy_collections }}"
+

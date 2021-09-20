@@ -23,6 +23,11 @@
     ansible_packages: "{{ __ansible_packages | list }}"
   when: ansible_packages is not defined
 
+- name: Define ansible_galaxy_collections.
+  set_fact:
+    ansible_galaxy_collections: "{{ __ansible_galaxy_collections | list }}"
+  when: ansible_galaxy_collections is not defined
+
 - name: Define ansible_version.
   set_fact:
     ansible_version: "{{ __ansible_version }}"
