@@ -1,0 +1,5 @@
+---
+# Anisble_user is used by ansible so this causes a log in bug when doing tasks on the client.
+new_ansible_user: "admin"
+new_ansible_group: "admin"
+

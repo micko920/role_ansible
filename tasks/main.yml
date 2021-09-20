@@ -1,0 +1,28 @@
+---
+- include_tasks: is_systemd.yml
+
+# Variable configuration.
+- include_tasks: variables.yml
+
+- name: Add the ansible group
+  group:
+    name: "{{ new_ansible_group }}"
+    state: present
+
+- name: Add the ansible user
+  user:
+    name: "{{ new_ansible_user }}"
+    password_lock: true
+    shell: /bin/bash
+    append: true
+    state: present
+
+- name: Add the docker API
+  pip:
+    name: "docker"
+
+- name: Ensure ansible packages are installed.
+  apt:
+    name: "{{ ansible_packages }}"
+    state: present
+
