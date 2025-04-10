@@ -49,13 +49,6 @@
     name: "{{ ansible_packages }}"
     state: present
 
-- name: configure ansible config
-  template:
-    src: "{{ item }}.j2"
-    dest: "{{ ansible_config_path }}/{{ item }}"
-  with_items:
-    - ansible.cfg
-
 - name: Install collections from Ansible Galaxy
   command: "ansible-galaxy collection install {{ item }} -p /usr/share/ansible/colletions"
   loop: "{{ ansible_galaxy_collections }}"
