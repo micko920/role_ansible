@@ -17,10 +17,6 @@
     append: true
     state: present
 
-- name: Add the docker API
-  pip:
-    name: "docker"
-
 - name: Ensure system script path exists
   file:
     path: "/home/{{ new_ansible_user }}/system"

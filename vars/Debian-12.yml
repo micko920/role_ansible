@@ -1,0 +1,10 @@
+---
+__ansible_version: "2.9.24"
+__ansible_bin_path: "/usr/local/bin"
+__ansible_config_path: "/etc/ansible"
+__ansible_packages:
+  - ansible
+  - make
+  - python3-docker
+__ansible_galaxy_collections:
+  - community.docker
